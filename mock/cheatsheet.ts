@@ -65,10 +65,31 @@ function generateCard(data) : string {
     );
 }
 function generateList(data) : string {
-    return;
+    return (
+        `<div class="cs-list-item">
+            <div class="title">
+                <p>${data['title']}</p>
+            </div>
+            <div class="description-long">
+                <p>${data['description-long']}</p>
+            </div>
+        </div>`
+    );
 }
 function generateListBrief(data) : string {
-    return;
+    return (
+        `<div class="cs-list-brief-item">
+            <div class="title">
+                <p>${data['title']}</p>
+            </div>
+            <div class="description-short">
+                <p>${data['description-short']}</p>
+            </div>
+        </div>`
+    );
 }
 
+// Fill in the data using the generators
 $("#flexbox-cards").append($.map(flexbox_data, generateCard).join("\n"));
+$("#flexbox-list").append($.map(flexbox_data, generateList).join("\n"));
+$("#flexbox-list-brief").append($.map(flexbox_data, generateListBrief).join("\n"));
