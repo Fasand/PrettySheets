@@ -1,0 +1,141 @@
+input:focus {
+    outline: none;
+}
+
+#main-nav {
+    display: flex;
+    background-color: hsl(200, 60%, 50%);
+    justify-content: space-between;
+
+    a {
+        color: whitesmoke;
+        text-decoration: none;
+    }
+
+    .title {
+        font-size: 25px;
+        padding: 10px 20px;
+        margin: 0;
+        text-shadow: 1px 1px black;
+    }
+
+    nav {
+        display: flex;
+
+        a {
+            font-size: 15px;
+            padding: 15px 25px;
+            text-shadow: 1px 1px #555;
+
+            &:hover {
+                background-color: hsl(200, 60%, 45%);
+                box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.15);
+            }
+        }
+    }
+}
+
+#sheet-search {
+    display: flex;
+    background-color: #F0F0F0;
+    justify-content: center;
+    box-shadow: inset 0px -10px 25px -10px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid #CCC;
+}
+#search {
+    margin: 150px 0;
+    width: 70%;
+    font-size: 25px;
+    padding: 10px 25px;
+    border: 1px solid #DDD;
+    border-radius: 10px;
+}
+
+main {
+    display: grid !important;
+    width: 800px;
+    margin: 0px auto;
+    padding: 30px 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "ps ps"
+        "bbc bbt";
+    grid-gap: 50px 50px;
+
+    #popular-sheets {
+        grid-area: ps;
+    }
+    #browse-by-category {
+        grid-area: bbc;
+    }
+    #browse-by-tag {
+        grid-area: bbt;
+    }
+}
+
+
+#tag-search {
+    width: 100%;
+    border-radius: 5px;
+    margin: 0 0 15px 0;
+    padding: 5px 10px;
+    border: 1px solid #DDD;
+}
+
+.sheets-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+
+    .sheet-card {
+        display: grid;
+        grid-template-areas: 
+            "sn sn"
+            "sa sv";
+        background-color: hsl(200, 60%, 90%);
+        padding: 15px;
+        border: 1px solid rgba(100, 100, 100, 0.2);
+        border-radius: 5px;
+
+        &:hover {
+            background-color: hsl(200, 60%, 84%);
+            cursor: pointer;
+        }
+
+        .sheet-name {
+            grid-area: sn;
+            font-weight: 700;
+        }
+        .sheet-author {
+            grid-area: sa;
+            .author {
+                font-style: italic;
+            }
+        }
+        .sheet-views {
+            grid-area: sv;
+        }
+    }
+}
+
+
+.grid-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    align-items: flex-start;
+
+    .grid-list-item {
+        margin: 0;
+        padding: 3px 10px 3px 10px;
+        background-color: hsl(200, 100%, 98%);
+        border: 1px solid hsl(200, 100%, 92%);
+        border-radius: 10px;
+
+        &:hover {
+            background-color: hsl(200, 100%, 92%);
+            border-color: hsl(200, 100%, 85%);
+            cursor: pointer;
+        }
+    }
+}
